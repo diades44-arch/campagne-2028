@@ -134,6 +134,44 @@ section {
     padding: 30px;
 }
 
+#podcast {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* la vraie carte */
+.podcast-card {
+    background: linear-gradient(135deg, #2ecc71, #0b3d2e);
+    color: white;
+    padding: 30px;
+    border-radius: 16px;
+
+    width: 60%;
+    max-width: 600px;
+
+    text-align: center;
+
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+/* boutons */
+.podcast-card .buttons {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.podcast-card .buttons a {
+    background: white;
+    color: #0b3d2e;
+    padding: 8px 15px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
 /* FOOTER */
 footer {
     background: var(--vert-fonce);
