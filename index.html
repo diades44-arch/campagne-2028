@@ -16,9 +16,9 @@
 
     <nav>
         <a href="#accueil">Accueil</a>
+        <a href="#axes">Projet</a>
         <a href="#programme">Programme</a>
         <a href="#podcast">Podcast</a>
-        <a href="#actualites">Actualités</a>
         <a href="#contact">S'engager</a>
     </nav>
 </header>
@@ -37,7 +37,7 @@
         <h1>Juliette Chesnel-Le Roux</h1>
         <h2>Départementales 2028 — Alpes-Maritimes</h2>
 
-        <p>Une campagne de terrain, proche des habitants, pour améliorer le quotidien.</p>
+        <p>Une campagne de terrain pour améliorer concrètement le quotidien.</p>
 
         <button onclick="clic()">💚 Je soutiens</button>
 
@@ -46,45 +46,96 @@
         </div>
 
     </div>
-
 </section>
 
-<!-- PROGRAMME (VERSION AMÉLIORÉE) -->
+<!-- CHIFFRES TERRITOIRE -->
+<section>
+    <h2>Le territoire en chiffres</h2>
+
+    <div class="grid">
+        <div class="card">
+            <h3>1,11 million</h3>
+            <p>d’habitants dans les Alpes-Maritimes</p>
+        </div>
+
+        <div class="card">
+            <h3>15,4%</h3>
+            <p>de jeunes de moins de 15 ans</p>
+        </div>
+
+        <div class="card">
+            <h3>13%</h3>
+            <p>de plus de 75 ans</p>
+        </div>
+
+        <div class="card">
+            <h3>259 hab/km²</h3>
+            <p>territoire dense et contrasté</p>
+        </div>
+    </div>
+</section>
+
+<!-- AXES -->
+<section id="axes">
+    <h2>Le projet politique</h2>
+
+    <div class="grid">
+
+        <div class="card">
+            <h3>🚍 Axe 1 — Quotidien</h3>
+            <p>
+                Améliorer les transports entre côte et arrière-pays, l’accès au logement
+                et les services publics du quotidien.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>🌿 Axe 2 — Territoire</h3>
+            <p>
+                Protéger les paysages face aux incendies, aux inondations et à la crise climatique
+                dans une logique locale et concrète.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>🏛 Axe 3 — Renouveau</h3>
+            <p>
+                Proposer une alternative crédible à des décennies de gestion départementale,
+                avec une approche technique et transparente.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<!-- PROGRAMME -->
 <section id="programme">
-    <h2>Le programme</h2>
+    <h2>Programme concret</h2>
 
     <div class="accordion">
 
-        <button class="accordion-btn">🚍 Améliorer les transports</button>
+        <button class="accordion-btn">🚍 Mobilité</button>
         <div class="accordion-content">
-            <p>
-                Développer les liaisons entre la côte et l’arrière-pays.
-                Faciliter les déplacements quotidiens des habitants.
-            </p>
+            <p>Renforcement des liaisons côte / arrière-pays.</p>
+            <p>+ développement des transports publics (priorité zones rurales).</p>
         </div>
 
-        <button class="accordion-btn">🏡 Logement et solidarité</button>
+        <button class="accordion-btn">🏡 Logement</button>
         <div class="accordion-content">
-            <p>
-                Faciliter l’accès au logement dans les zones tendues.
-                Lutter contre la précarité et renforcer les aides sociales.
-            </p>
+            <p>Accès au logement facilité pour les classes moyennes et jeunes actifs.</p>
+            <p>Encadrement des tensions immobilières à Nice et littoral.</p>
         </div>
 
-        <button class="accordion-btn">🌿 Écologie et protection du territoire</button>
+        <button class="accordion-btn">🌿 Environnement</button>
         <div class="accordion-content">
-            <p>
-                Protéger les paysages face aux incendies et aux inondations.
-                Adapter le territoire au changement climatique.
-            </p>
+            <p>Plan anti-incendie renforcé pour l’arrière-pays.</p>
+            <p>Prévention des inondations et adaptation climatique locale.</p>
         </div>
 
-        <button class="accordion-btn">🏫 Jeunesse et éducation</button>
+        <button class="accordion-btn">🏫 Jeunesse</button>
         <div class="accordion-content">
-            <p>
-                Soutenir les collèges et l’éducation.
-                Accompagner les jeunes dans leur parcours et leur avenir.
-            </p>
+            <p>Modernisation des collèges (Département compétent).</p>
+            <p>Accès renforcé à la culture et au sport.</p>
         </div>
 
     </div>
@@ -94,24 +145,13 @@
 <section id="podcast">
     <h2>🎙 Podcast</h2>
 
-    <div class="card">
+    <div class="card podcast-card">
         <p>Chaque semaine, un échange avec les habitants des Alpes-Maritimes.</p>
 
         <div class="buttons">
             <a href="#">Spotify</a>
             <a href="#">YouTube</a>
         </div>
-    </div>
-</section>
-
-<!-- ACTUALITÉS -->
-<section id="actualites">
-    <h2>Actualités</h2>
-
-    <div class="grid">
-        <div class="card">📢 Lancement de campagne</div>
-        <div class="card">📍 Rencontre habitants</div>
-        <div class="card">🌱 Transition écologique locale</div>
     </div>
 </section>
 
@@ -136,7 +176,6 @@
     <p id="message"></p>
 </section>
 
-<!-- FOOTER -->
 <footer>
     <p>Suivez la campagne</p>
 
@@ -151,6 +190,6 @@
 </footer>
 
 <script src="script.js"></script>
-
 </body>
 </html>
+
