@@ -1,217 +1,281 @@
-/* VARIABLES */
-:root {
-    --vert: #2ecc71;
-    --vert-fonce: #0b3d2e;
-    --gris-clair: #f5f7f6;
-}
+/* =========================
+   RESET & BASE
+========================= */
 
-/* GLOBAL */
-body {
+* {
     margin: 0;
-    font-family: Arial, sans-serif;
-    background: var(--gris-clair);
-    color: #1b1b1b;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/* HEADER */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    background: #f6f7f5;
+    color: #111;
+    line-height: 1.6;
+}
+
+/* =========================
+   VARIABLES (STYLE CAMPAGNE)
+========================= */
+
+:root {
+    --vert: #1f6f4a;
+    --vert-fonce: #0d3b28;
+    --noir: #111;
+    --gris: #f6f7f5;
+    --blanc: #ffffff;
+}
+
+/* =========================
+   HEADER (STYLE MINIMALISTE PRO)
+========================= */
+
 header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(255,255,255,0.85);
+    backdrop-filter: blur(10px);
     display: flex;
     justify-content: space-between;
-    padding: 15px 30px;
-    background: var(--vert-fonce);
-    color: white;
-    position: sticky;
-    top: 0;
+    padding: 15px 40px;
+    border-bottom: 1px solid #eee;
     z-index: 1000;
 }
 
-header nav a {
-    color: white;
-    margin-left: 15px;
-    text-decoration: none;
-}
-
 .logo {
-    font-weight: bold;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: var(--vert-fonce);
 }
 
-/* HERO */
+nav a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: #222;
+    font-weight: 500;
+    transition: 0.2s;
+}
+
+nav a:hover {
+    color: var(--vert);
+}
+
+/* =========================
+   HERO (STYLE CAMPAGNE MODERNE)
+========================= */
+
 .hero {
     height: 100vh;
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     text-align: center;
 
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.4)),
-    url("fond.jpg");
-    background-size: cover;
-    background-position: center;
-    color: white;
+    background:
+        radial-gradient(circle at top, rgba(31,111,74,0.15), transparent 60%),
+        linear-gradient(to bottom, #ffffff, #f6f7f5);
 }
 
 .hero-content {
-    max-width: 600px;
+    max-width: 700px;
+    padding: 20px;
 }
 
 .photo-candidate {
     width: 140px;
     height: 140px;
     border-radius: 50%;
-    border: 3px solid var(--vert);
     object-fit: cover;
+    border: 3px solid var(--vert);
     margin-bottom: 15px;
 }
 
-/* BUTTON */
+.tagline {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.hero h1 {
+    font-size: 42px;
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+
+.hero h2 {
+    font-size: 18px;
+    font-weight: 400;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+/* =========================
+   BUTTON (STYLE CAMPAGNE)
+========================= */
+
 button {
     background: var(--vert);
-    border: none;
-    padding: 12px 20px;
     color: white;
-    border-radius: 25px;
+    border: none;
+    padding: 12px 22px;
+    border-radius: 30px;
+    font-weight: 600;
     cursor: pointer;
-    margin-top: 10px;
-    transition: 0.2s;
+    transition: 0.3s;
 }
 
 button:hover {
-    transform: scale(1.05);
+    background: var(--vert-fonce);
+    transform: translateY(-2px);
 }
 
-/* SECTIONS */
+/* =========================
+   SECTIONS (STYLE ÉDITORIAL)
+========================= */
+
 section {
-    padding: 60px 20px;
+    padding: 90px 20px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+section h2 {
+    font-size: 28px;
+    margin-bottom: 30px;
     text-align: center;
 }
 
-/* ACCORDION */
-.accordion-btn {
-    width: 80%;
-    padding: 15px;
-    margin: 10px auto;
-    background: var(--vert-fonce);
-    color: white;
-    border: none;
-    cursor: pointer;
-    border-radius: 14px;
-}
+/* =========================
+   CARTES
+========================= */
 
-.accordion-content {
-    display: none;
-    width: 80%;
-    margin: auto;
-    padding: 10px;
-    background: #e8f5e9;
-    border-radius: 10px;
-}
-
-/* CARDS */
 .grid {
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 20px;
-    flex-wrap: wrap;
 }
 
 .card {
     background: white;
     padding: 20px;
-    border-radius: 14px;
-    width: 200px;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
-    transition: transform 0.2s ease;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    transition: 0.3s;
 }
 
 .card:hover {
     transform: translateY(-5px);
 }
 
-/* PODCAST */
-#podcast .card {
+/* =========================
+   ACCORDÉON PROGRAMME
+========================= */
+
+.accordion-btn {
+    width: 100%;
+    padding: 16px;
+    margin-top: 10px;
+    background: white;
+    border: 1px solid #eee;
+    border-radius: 12px;
+    text-align: left;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.accordion-content {
+    display: none;
+    padding: 15px;
+    background: #f0f7f3;
+    border-radius: 12px;
+    margin-bottom: 10px;
+}
+
+/* =========================
+   PODCAST (BLOC PREMIUM)
+========================= */
+
+.podcast-card {
     background: linear-gradient(135deg, var(--vert), var(--vert-fonce));
     color: white;
-    padding: 30px;
-}
-
-#podcast {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-/* la vraie carte */
-.podcast-card {
-    background: linear-gradient(135deg, #2ecc71, #0b3d2e);
-    color: white;
-    padding: 30px;
-    border-radius: 16px;
-
-    width: 60%;
-    max-width: 600px;
-
     text-align: center;
-
-    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    padding: 40px;
+    border-radius: 20px;
 }
 
-/* boutons */
-.podcast-card .buttons {
-    margin-top: 15px;
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-}
-
-.podcast-card .buttons a {
+.podcast-card a {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px 15px;
     background: white;
-    color: #0b3d2e;
-    padding: 8px 15px;
+    color: var(--vert-fonce);
     border-radius: 20px;
     text-decoration: none;
     font-weight: bold;
 }
 
-/* FOOTER */
+/* =========================
+   FORMULAIRE
+========================= */
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 400px;
+    margin: auto;
+}
+
+input, select {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
 footer {
+    text-align: center;
+    padding: 40px;
     background: var(--vert-fonce);
     color: white;
-    text-align: center;
-    padding: 20px;
+    margin-top: 50px;
 }
 
 .socials a {
-    color: var(--vert);
+    color: white;
     margin: 0 10px;
     text-decoration: none;
 }
 
-/* TAGLINE */
-.tagline {
-    font-size: 14px;
-    opacity: 0.8;
-    margin-top: -10px;
-}
+/* =========================
+   RESPONSIVE
+========================= */
 
-/* RESPONSIVE */
 @media (max-width: 768px) {
-    .grid {
+    .hero h1 {
+        font-size: 28px;
+    }
+
+    header {
         flex-direction: column;
         align-items: center;
     }
 
     nav {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .hero h1 {
-        font-size: 24px;
+        margin-top: 10px;
     }
 }
-
-/* SMOOTH SCROLL */
 html {
     scroll-behavior: smooth;
 }
