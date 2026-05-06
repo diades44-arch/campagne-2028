@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Campagne 2026</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <div class="logo">Mon Candidat</div>
+    <nav>
+        <a href="#accueil">Accueil</a>
+        <a href="#programme">Programme</a>
+        <a href="#actualites">Actualités</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<!-- HERO -->
+<section id="accueil" class="hero">
+    <div class="hero-content">
+        <h1>Un avenir plus juste, plus vert</h1>
+        <p>Construisons ensemble une ville écologique, solidaire et moderne.</p>
+        <button onclick="clic()">Je soutiens</button>
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.6)),
+    url("fond.jpg");
+
+    background-size: cover;
+    background-position: center;
+}
+        <!-- COMPTEUR -->
+        <div class="compteur-box">
+            <h2><span id="compteur">0</span> soutiens</h2>
+            <p>Rejoignez le mouvement dès aujourd'hui</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- PROGRAMME -->
+<section id="programme">
+    <h2>Le Programme</h2>
+
+    <div class="accordion">
+
+        <button class="accordion-btn">🌿 Environnement</button>
+        <div class="accordion-content">
+            <p>Plan massif de végétalisation et lutte contre la bétonisation.</p>
+            <p>Développement des énergies renouvelables.</p>
+        </div>
+
+        <button class="accordion-btn">📚 Éducation</button>
+        <div class="accordion-content">
+            <p>Plus de places en crèche et écoles modernisées.</p>
+            <p>Alimentation saine dans les cantines.</p>
+        </div>
+
+        <button class="accordion-btn">🚲 Transports</button>
+        <div class="accordion-content">
+            <p>Développement des transports publics.</p>
+            <p>Réseau vélo sécurisé et mobilité douce.</p>
+        </div>
+
+        <button class="accordion-btn">🏠 Logement</button>
+        <div class="accordion-content">
+            <p>Encadrement des loyers et logement pour tous.</p>
+        </div>
+
+        <button class="accordion-btn">🏥 Santé</button>
+        <div class="accordion-content">
+            <p>Maisons de santé accessibles à tous.</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- ACTUALITÉS -->
+<section id="actualites">
+    <h2>Actualités</h2>
+
+    <div class="grid">
+        <div class="card">📢 Lancement officiel de la campagne</div>
+        <div class="card">📍 Rencontre avec les habitants</div>
+        <div class="card">🌱 Présentation du plan écologique</div>
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+    <h2>Rejoignez le mouvement</h2>
+
+    <form id="formulaire">
+        <input type="text" placeholder="Nom" required>
+        <input type="email" placeholder="Email" required>
+
+        <select>
+            <option>Je souhaite...</option>
+            <option>Soutenir la campagne</option>
+            <option>Être bénévole</option>
+            <option>Recevoir les actualités</option>
+        </select>
+
+        <button type="submit">Je m'engage</button>
+    </form>
+
+    <p id="message"></p>
+</section>
+<footer>
+
+    <div class="footer-content">
+
+        <p>Suivez la campagne</p>
+
+        <div class="socials">
+            <a href="#">Facebook</a>
+            <a href="#">Instagram</a>
+            <a href="#">Twitter / X</a>
+            <a href="#">TikTok</a>
+        </div>
+
+        <p>© 2026 - Projet scolaire</p>
+
+    </div>
+
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
