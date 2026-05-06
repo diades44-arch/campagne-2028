@@ -22,3 +22,18 @@ document.getElementById("formulaire").addEventListener("submit", function(e){
     document.getElementById("message").innerText =
         "Merci pour votre engagement !";
 });
+
+        .hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.6)),
+    url("fond.jpg");
+
+    background-size: cover;
+    background-position: center;
+}
