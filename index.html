@@ -3,85 +3,88 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Campagne 2026</title>
+
+<title>Juliette Chesnel-Le Roux | Alpes-Maritimes 2028</title>
+
 <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
 <header>
-    <div class="logo">Mon Candidat</div>
+    <div class="logo">Chesnel-Le Roux 2028</div>
+
     <nav>
         <a href="#accueil">Accueil</a>
         <a href="#programme">Programme</a>
+        <a href="#podcast">Podcast</a>
         <a href="#actualites">Actualités</a>
-        <a href="#contact">Contact</a>
+        <a href="#contact">S'engager</a>
     </nav>
 </header>
 
 <!-- HERO -->
 <section id="accueil" class="hero">
+
     <div class="hero-content">
-        <h1>Un avenir plus juste, plus vert</h1>
-        <p>Construisons ensemble une ville écologique, solidaire et moderne.</p>
-        <button onclick="clic()">Je soutiens</button>
-.hero {
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: white;
 
-    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.6)),
-    url("fond.jpg");
+        <img src="candidate.jpg" class="photo-candidate" alt="Candidate">
 
-    background-size: cover;
-    background-position: center;
-}
-        <!-- COMPTEUR -->
+        <h1>Juliette Chesnel-Le Roux</h1>
+        <h2>Départementales 2028 — Alpes-Maritimes</h2>
+
+        <p>Une campagne de terrain pour améliorer le quotidien.</p>
+
+        <button onclick="clic()">Je soutiens la campagne</button>
+
         <div class="compteur-box">
-            <h2><span id="compteur">0</span> soutiens</h2>
-            <p>Rejoignez le mouvement dès aujourd'hui</p>
+            <h3><span id="compteur">0</span> soutiens</h3>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- PROGRAMME -->
+<section id="programme">
+    <h2>Programme</h2>
+
+    <div class="accordion">
+
+        <button class="accordion-btn">🚍 Mobilité</button>
+        <div class="accordion-content">
+            <p>Améliorer les transports entre côte et arrière-pays.</p>
+        </div>
+
+        <button class="accordion-btn">🏡 Logement</button>
+        <div class="accordion-content">
+            <p>Accès au logement et lutte contre la précarité.</p>
+        </div>
+
+        <button class="accordion-btn">🌿 Écologie</button>
+        <div class="accordion-content">
+            <p>Lutte contre les incendies et adaptation climatique.</p>
+        </div>
+
+        <button class="accordion-btn">🏫 Jeunesse</button>
+        <div class="accordion-content">
+            <p>Éducation et accompagnement des jeunes.</p>
         </div>
 
     </div>
 </section>
 
-<!-- PROGRAMME -->
-<section id="programme">
-    <h2>Le Programme</h2>
+<!-- PODCAST -->
+<section id="podcast">
+    <h2>🎙 Podcast</h2>
 
-    <div class="accordion">
+    <div class="card">
+        <p>Chaque semaine, des échanges avec les habitants du territoire.</p>
 
-        <button class="accordion-btn">🌿 Environnement</button>
-        <div class="accordion-content">
-            <p>Plan massif de végétalisation et lutte contre la bétonisation.</p>
-            <p>Développement des énergies renouvelables.</p>
+        <div class="buttons">
+            <a href="#">Spotify</a>
+            <a href="#">YouTube</a>
         </div>
-
-        <button class="accordion-btn">📚 Éducation</button>
-        <div class="accordion-content">
-            <p>Plus de places en crèche et écoles modernisées.</p>
-            <p>Alimentation saine dans les cantines.</p>
-        </div>
-
-        <button class="accordion-btn">🚲 Transports</button>
-        <div class="accordion-content">
-            <p>Développement des transports publics.</p>
-            <p>Réseau vélo sécurisé et mobilité douce.</p>
-        </div>
-
-        <button class="accordion-btn">🏠 Logement</button>
-        <div class="accordion-content">
-            <p>Encadrement des loyers et logement pour tous.</p>
-        </div>
-
-        <button class="accordion-btn">🏥 Santé</button>
-        <div class="accordion-content">
-            <p>Maisons de santé accessibles à tous.</p>
-        </div>
-
     </div>
 </section>
 
@@ -90,15 +93,15 @@
     <h2>Actualités</h2>
 
     <div class="grid">
-        <div class="card">📢 Lancement officiel de la campagne</div>
-        <div class="card">📍 Rencontre avec les habitants</div>
-        <div class="card">🌱 Présentation du plan écologique</div>
+        <div class="card">📢 Lancement de campagne</div>
+        <div class="card">📍 Rencontre habitants</div>
+        <div class="card">🌱 Transition écologique</div>
     </div>
 </section>
 
 <!-- CONTACT -->
 <section id="contact">
-    <h2>Rejoignez le mouvement</h2>
+    <h2>S'engager</h2>
 
     <form id="formulaire">
         <input type="text" placeholder="Nom" required>
@@ -106,9 +109,9 @@
 
         <select>
             <option>Je souhaite...</option>
-            <option>Soutenir la campagne</option>
+            <option>Soutenir</option>
             <option>Être bénévole</option>
-            <option>Recevoir les actualités</option>
+            <option>Recevoir les infos</option>
         </select>
 
         <button type="submit">Je m'engage</button>
@@ -116,23 +119,19 @@
 
     <p id="message"></p>
 </section>
+
+<!-- FOOTER -->
 <footer>
+    <p>Suivez la campagne</p>
 
-    <div class="footer-content">
-
-        <p>Suivez la campagne</p>
-
-        <div class="socials">
-            <a href="#">Facebook</a>
-            <a href="#">Instagram</a>
-            <a href="#">Twitter / X</a>
-            <a href="#">TikTok</a>
-        </div>
-
-        <p>© 2026 - Projet scolaire</p>
-
+    <div class="socials">
+        <a href="#">Instagram</a>
+        <a href="#">TikTok</a>
+        <a href="#">Facebook</a>
+        <a href="#">LinkedIn</a>
     </div>
 
+    <p>© 2028 Alpes-Maritimes</p>
 </footer>
 
 <script src="script.js"></script>
