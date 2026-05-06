@@ -1,39 +1,121 @@
-// compteur de soutien
-let compteur = 0;
-
-function clic() {
-    compteur++;
-    document.getElementById("compteur").innerText = compteur;
+/* GLOBAL */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f5f7f6;
+    color: #1b1b1b;
 }
 
-// accordion programme
-document.querySelectorAll(".accordion-btn").forEach(btn => {
-    btn.addEventListener("click", () => {
-        let content = btn.nextElementSibling;
+/* HEADER */
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 30px;
+    background: #0b3d2e;
+    color: white;
+    position: sticky;
+    top: 0;
+}
 
-        content.style.display =
-            content.style.display === "block" ? "none" : "block";
-    });
-});
+header nav a {
+    color: white;
+    margin-left: 15px;
+    text-decoration: none;
+}
 
-// formulaire
-document.getElementById("formulaire").addEventListener("submit", function(e){
-    e.preventDefault();
-    document.getElementById("message").innerText =
-        "Merci pour votre engagement !";
-});
+.logo {
+    font-weight: bold;
+}
 
-        .hero {
+/* HERO */
+.hero {
     height: 100vh;
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     text-align: center;
-    color: white;
 
-    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.6)),
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.4)),
     url("fond.jpg");
-
     background-size: cover;
     background-position: center;
+    color: white;
+}
+
+.hero-content {
+    max-width: 600px;
+}
+
+.photo-candidate {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    border: 3px solid #2ecc71;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+/* BUTTON */
+button {
+    background: #2ecc71;
+    border: none;
+    padding: 12px 20px;
+    color: white;
+    border-radius: 25px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+/* SECTIONS */
+section {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+/* ACCORDION */
+.accordion-btn {
+    width: 80%;
+    padding: 15px;
+    margin: 10px auto;
+    background: #0b3d2e;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.accordion-content {
+    display: none;
+    width: 80%;
+    margin: auto;
+    padding: 10px;
+    background: #e8f5e9;
+}
+
+/* CARDS */
+.grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 200px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* FOOTER */
+footer {
+    background: #0b3d2e;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+.socials a {
+    color: #2ecc71;
+    margin: 0 10px;
+    text-decoration: none;
 }
