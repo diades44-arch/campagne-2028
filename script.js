@@ -1,40 +1,30 @@
+let compteur = 0;
+
 function clic() {
-    alert("Merci pour votre soutien !");
+    compteur++;
+    document.getElementById("compteur").textContent = compteur;
 }
 
 /* ACCORDION */
-const buttons = document.querySelectorAll(".accordion-btn");
+document.querySelectorAll(".accordion-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+        let content = btn.nextElementSibling;
 
-buttons.forEach(button => {
-    button.addEventListener("click", () => {
-        const content = button.nextElementSibling;
-
-        document.querySelectorAll(".accordion-content").forEach(item => {
-            if (item !== content) item.style.display = "none";
+        document.querySelectorAll(".accordion-content").forEach(el => {
+            if (el !== content) el.style.display = "none";
         });
 
         content.style.display =
             content.style.display === "block" ? "none" : "block";
     });
 });
+
 /* FORMULAIRE */
-const form = document.getElementById("formulaire");
-const message = document.getElementById("message");
-
-form.addEventListener("submit", function(e) {
+document.getElementById("formulaire").addEventListener("submit", function(e){
     e.preventDefault();
+    document.getElementById("message").textContent =
+        "Merci pour votre engagement 💚";
 
-    message.textContent = "Merci pour votre engagement ! 💚";
-
-    // compteur +1
     compteur++;
-    document.getElementById("compteur").textContent = compteur;
-});
-
-
-/* COMPTEUR DE SOUTIEN */
-let compteur = 1287; // nombre de départ
-
-document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("compteur").textContent = compteur;
 });
