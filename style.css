@@ -1,17 +1,33 @@
 /* =========================
-   BACKGROUND GLOBAL PREMIUM
+   RESET
 ========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
 
 body {
     font-family: system-ui, Arial, sans-serif;
-    margin: 0;
+    background: #f4f7f5;
     color: #111;
+    line-height: 1.6;
+}
 
-    /* fond moderne */
-    background:
-        radial-gradient(circle at top, rgba(31,122,74,0.10), transparent 60%),
-        radial-gradient(circle at bottom, rgba(0,0,0,0.04), transparent 60%),
-        linear-gradient(#f7f9f7, #f2f5f3);
+/* =========================
+   VARIABLES
+========================= */
+
+:root {
+    --vert: #1f7a4a;
+    --vert-dark: #0e3d27;
+    --gris: #f4f7f5;
+    --ombre: 0 10px 25px rgba(0,0,0,0.08);
 }
 
 /* =========================
@@ -22,27 +38,37 @@ header {
     position: fixed;
     top: 0;
     width: 100%;
-    background: rgba(255,255,255,0.85);
-    backdrop-filter: blur(10px);
+    z-index: 999;
+
     display: flex;
     justify-content: space-between;
+    align-items: center;
+
     padding: 14px 30px;
+
+    background: rgba(255,255,255,0.85);
+    backdrop-filter: blur(10px);
     border-bottom: 1px solid #eee;
-    z-index: 999;
+}
+
+.logo {
+    font-weight: 800;
+    color: var(--vert-dark);
 }
 
 nav a {
     margin-left: 15px;
     text-decoration: none;
     color: #222;
+    font-weight: 500;
 }
 
 nav a:hover {
-    color: #1f7a4a;
+    color: var(--vert);
 }
 
 /* =========================
-   HERO
+   HERO (AVEC PHOTO DE FOND)
 ========================= */
 
 .hero {
@@ -51,10 +77,23 @@ nav a:hover {
     align-items: center;
     justify-content: center;
     text-align: center;
+
+    /* PHOTO + OVERLAY */
+    background:
+        linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.45)),
+        url("fond.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
+    color: white;
 }
 
 .hero-content {
     max-width: 700px;
+    padding: 20px;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.4);
 }
 
 .photo-candidate {
@@ -63,6 +102,7 @@ nav a:hover {
     border-radius: 50%;
     object-fit: cover;
     border: 4px solid #1f7a4a;
+    margin-bottom: 10px;
 }
 
 /* =========================
@@ -81,7 +121,7 @@ h2 {
 }
 
 /* =========================
-   CARTES
+   GRIDS + CARTES
 ========================= */
 
 .grid {
@@ -94,7 +134,54 @@ h2 {
     background: white;
     padding: 20px;
     border-radius: 14px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+    box-shadow: var(--ombre);
+    color: #111; /* IMPORTANT lisibilité */
+}
+
+/* =========================
+   ACCORDÉON PROGRAMME
+========================= */
+
+.accordion-btn {
+    width: 100%;
+    padding: 15px;
+    margin-top: 10px;
+
+    background: white;
+    border-radius: 12px;
+    border: 1px solid #ddd;
+
+    text-align: left;
+    cursor: pointer;
+
+    font-weight: 600;
+    color: #111;
+}
+
+.accordion-content {
+    display: none;
+    padding: 15px;
+    background: #eef6f0;
+    border-radius: 12px;
+    color: #111;
+}
+
+/* =========================
+   BUTTON
+========================= */
+
+button {
+    background: var(--vert);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 999px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+button:hover {
+    background: var(--vert-dark);
 }
 
 /* =========================
@@ -102,7 +189,7 @@ h2 {
 ========================= */
 
 .podcast-card {
-    background: linear-gradient(135deg, #1f7a4a, #0e3d27);
+    background: linear-gradient(135deg, var(--vert), var(--vert-dark));
     color: white;
     text-align: center;
     padding: 40px;
@@ -111,51 +198,13 @@ h2 {
 
 .podcast-card a {
     background: white;
-    color: #0e3d27;
+    color: var(--vert-dark);
     padding: 10px 15px;
     border-radius: 999px;
     text-decoration: none;
     margin: 5px;
     display: inline-block;
-}
-
-/* =========================
-   BUTTON
-========================= */
-
-button {
-    background: #1f7a4a;
-    color: white;
-    border: none;
-    padding: 12px 20px;
-    border-radius: 999px;
-    cursor: pointer;
-}
-
-button:hover {
-    background: #0e3d27;
-}
-
-/* =========================
-   ACCORDÉON
-========================= */
-
-.accordion-btn {
-    width: 100%;
-    padding: 15px;
-    margin-top: 10px;
-    background: white;
-    border-radius: 12px;
-    border: 1px solid #eee;
-    text-align: left;
-    cursor: pointer;
-}
-
-.accordion-content {
-    display: none;
-    padding: 15px;
-    background: #eaf5ee;
-    border-radius: 12px;
+    font-weight: bold;
 }
 
 /* =========================
@@ -163,8 +212,34 @@ button:hover {
 ========================= */
 
 footer {
-    background: #0e3d27;
+    background: var(--vert-dark);
     color: white;
     text-align: center;
     padding: 40px;
+}
+
+.socials a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+    opacity: 0.85;
+}
+
+.socials a:hover {
+    opacity: 1;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .hero h1 {
+        font-size: 28px;
+    }
 }
