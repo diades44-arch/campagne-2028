@@ -1,120 +1,24 @@
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #f4f7f6;
-    color: #1a1a1a;
+// compteur de soutien
+let compteur = 0;
+
+function clic() {
+    compteur++;
+    document.getElementById("compteur").innerText = compteur;
 }
 
-/* HEADER */
-header {
-    display: flex;
-    justify-content: space-between;
-    padding: 15px 30px;
-    background: #1b5e20;
-    color: white;
-}
+// accordion programme
+document.querySelectorAll(".accordion-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+        let content = btn.nextElementSibling;
 
-header nav a {
-    color: white;
-    margin-left: 15px;
-    text-decoration: none;
-}
+        content.style.display =
+            content.style.display === "block" ? "none" : "block";
+    });
+});
 
-/* HERO */
-.hero {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
-    url("fond.jpg");
-    background-size: cover;
-    color: white;
-}
-
-.photo-candidate {
-    width: 140px;
-    height: 140px;
-    border-radius: 50%;
-    border: 3px solid white;
-    object-fit: cover;
-}
-
-/* SECTIONS */
-section {
-    padding: 60px 20px;
-    max-width: 1000px;
-    margin: auto;
-}
-
-h2 {
-    color: #2e7d32;
-}
-
-/* BUTTON */
-button {
-    padding: 10px 15px;
-    background: #43a047;
-    border: none;
-    color: white;
-    margin-top: 10px;
-    cursor: pointer;
-    border-radius: 6px;
-}
-
-/* ACCORDION */
-.accordion-btn {
-    width: 100%;
-    text-align: left;
-    padding: 15px;
-    margin-top: 10px;
-    background: #e8f5e9;
-    border: none;
-    cursor: pointer;
-}
-
-.accordion-content {
-    display: none;
-    padding: 10px;
-    background: white;
-}
-
-/* GRID */
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 15px;
-}
-
-.card {
-    background: white;
-    padding: 15px;
-    border-radius: 10px;
-}
-
-/* FORM */
-form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-input, select {
-    padding: 10px;
-}
-
-/* FOOTER */
-footer {
-    text-align: center;
-    padding: 30px;
-    background: #1b5e20;
-    color: white;
-}
-
-.socials a {
-    color: white;
-    margin: 5px;
-    text-decoration: none;
-}
+// formulaire
+document.getElementById("formulaire").addEventListener("submit", function(e){
+    e.preventDefault();
+    document.getElementById("message").innerText =
+        "Merci pour votre engagement !";
+});
